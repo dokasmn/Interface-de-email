@@ -15,7 +15,7 @@ def send_email(subject, body, recipients):
     try:
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()
-            server.login(EMAIL, PASSWORD)
+            server.login(EMAIL, PASSWORD) 
             for recipient in recipients:
                 msg = MIMEMultipart()
                 msg['From'] = EMAIL
