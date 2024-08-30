@@ -13,6 +13,13 @@ EMAIL = config('EMAIL')
 PASSWORD = config('PASSWORD')
 
 def send_email(subject, body, recipients):
+    body += f"\n \
+--\n \
+G.S.C ltda \n \
+R. Arno Waldemar Döhler, 957 - Zona Industrial Norte, \n \
+Joinville - SC, 89219-510\n \
+Telefone: (47) 99717-2353\n \
+    "
     try:
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()
