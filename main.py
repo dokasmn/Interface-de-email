@@ -12,11 +12,6 @@ SMTP_PORT = int(config('SMTP_PORT'))
 EMAIL = config('EMAIL')
 PASSWORD = config('PASSWORD')
 
-SMTP_SERVER = config('SMTP_SERVER')
-SMTP_PORT = int(config('SMTP_PORT'))
-EMAIL = config('EMAIL')
-PASSWORD = config('PASSWORD')
-
 def send_email(subject, body, recipients):
     try:
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
@@ -125,6 +120,6 @@ body_text = Text(root, height=10, width=50)
 body_text.grid(padx=10, pady=10, sticky="W E")
 
 send_button = Button(root, text="Enviar E-mail", command=on_send_button_click)
-send_button.grid(row=4, column=0, padx=10, pady=10)
+send_button.grid(row=5, column=0, padx=10, pady=10, sticky="E")
 
 root.mainloop()
